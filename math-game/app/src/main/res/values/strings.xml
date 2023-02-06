@@ -19,4 +19,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="rules">Pelin säännöt ovat: valitse plussa- tai kertolasku. Laske tehtävät.</string>
     <string name="about">Tämä peli toteutettiin Mobiiliohjelmointi -kurssilla! Toteuttaja: Emil</string>
+    <string name="score">Score: %d/4</string>
 </resources>

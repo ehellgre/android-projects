@@ -22,11 +22,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import com.example.android.navigation.databinding.FragmentGameBinding
 import com.example.android.navigation.databinding.FragmentTitleBinding
 
 class GameFragment : Fragment() {
-    private var score = 0
+    var score = 0
     private var currentProblem = 1
 
     override fun onCreateView(
@@ -45,13 +46,18 @@ class GameFragment : Fragment() {
                 binding.number2TextView.text.toString().toInt()
             ) {
                 score++
+                binding.scoreText.text ="$score/4"
+            } else {
+                binding.scoreText.text = "$score/4"
             }
 
             if (currentProblem < 4) {
                 currentProblem++
                 generateProblem(binding)
             } else {
-                //navigateToEndFragment()
+                val bundle = Bundle()
+                bundle.putInt("score", score)
+                findNavController().navigate(R.id.action_gameFragment_to_endFragment, bundle)
             }
         }
 
@@ -63,5 +69,6 @@ class GameFragment : Fragment() {
         binding.number2TextView.text = (1..10).random().toString()
         binding.answerText.text.clear()
     }
+
 
 }
