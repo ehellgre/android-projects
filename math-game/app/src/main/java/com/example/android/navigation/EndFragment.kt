@@ -19,11 +19,9 @@ class EndFragment : Fragment() {
         )
 
 
-        // THIS DOESNT WORK
         val score = arguments?.getInt("score", 0)
-        binding.endScoreText.text = "$score HALOOOOO"
+        binding.endScoreText.text = "$score/4"
 
-        // END
 
         return binding.root
     }
