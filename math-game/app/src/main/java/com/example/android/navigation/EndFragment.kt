@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import com.example.android.navigation.databinding.FragmentEndBinding
 
 class EndFragment : Fragment() {
@@ -18,9 +19,15 @@ class EndFragment : Fragment() {
             inflater, R.layout.fragment_end, container, false
         )
 
-
         val score = arguments?.getInt("score", 0)
         binding.endScoreText.text = "$score/4"
+
+
+        // Return to first page
+        binding.endButton.setOnClickListener {
+            findNavController().navigate(R.id.action_endFragment_to_titleFragment)
+        }
+
 
 
         return binding.root

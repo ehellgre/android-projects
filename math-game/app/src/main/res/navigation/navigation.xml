@@ -39,5 +39,9 @@
         android:id="@+id/endFragment"
         android:name="com.example.android.navigation.EndFragment"
         android:label="fragment_end"
-        tools:layout="@layout/fragment_end" />
+        tools:layout="@layout/fragment_end" >
+        <action
+            android:id="@+id/action_endFragment_to_titleFragment"
+            app:destination="@id/titleFragment" />
+    </fragment>
 </navigation>

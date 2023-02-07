@@ -8,16 +8,28 @@
             type="com.example.android.navigation.EndFragment"/>
     </data>
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/endScoreText"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="775dp"
-        android:text="End" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/endScoreText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_weight="0"
+            android:gravity="center"
+            android:text="End"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/endButton"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="200dp"
+            android:text="Try again" />
+
+    </LinearLayout>
 </layout>

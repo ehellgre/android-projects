@@ -13,39 +13,57 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/questionText"
-            android:text="Random Calculus Operation Here"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <EditText
-            android:id="@+id/answerText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/checkButton"
-            android:text="Check"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:id="@+id/scoreText"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="155dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="" />
 
         <TextView
             android:id="@+id/number1TextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textSize="24sp"
             android:text="Number 1" />
+
+        <TextView
+            android:id="@+id/plusOperatorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="+"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/number2TextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="24sp"
             android:text="Number 2" />
 
-        <TextView
-            android:id="@+id/scoreText"
-            android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/answerText"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:hint="Your answer"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="155dp"
+            android:minHeight="48dp" />
+
+        <Button
+            android:id="@+id/checkButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="155dp"
+            android:text="Submit" />
 
     </LinearLayout>
 </layout>
