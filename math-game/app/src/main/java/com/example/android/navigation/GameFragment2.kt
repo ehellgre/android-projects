@@ -46,6 +46,12 @@ class GameFragment2 : Fragment() {
 
         timer = Timer()
 
+        if(savedInstanceState != null) {
+            timerCount = savedInstanceState.getInt("timer")
+            score = savedInstanceState.getInt("score")
+            currentProblem = savedInstanceState.getInt("currentProblem")
+        }
+
         generateProblem(binding)
 
         binding.checkButton.setOnClickListener {
@@ -70,6 +76,13 @@ class GameFragment2 : Fragment() {
         }
 
         return binding.root
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("timer", timer.secondsCount)
+        outState.putInt("score", score)
+        outState.putInt("currentProblem", currentProblem)
     }
 
     private fun generateProblem(binding: FragmentGame2Binding) {

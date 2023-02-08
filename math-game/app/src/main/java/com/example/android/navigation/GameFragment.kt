@@ -32,6 +32,12 @@ class GameFragment : Fragment() {
 
         timer = Timer()
 
+        if(savedInstanceState != null) {
+            timerCount = savedInstanceState.getInt("timer")
+            score = savedInstanceState.getInt("score")
+            currentProblem = savedInstanceState.getInt("currentProblem")
+        }
+
         // generate problem for the user to solve
         generateProblem(binding)
 
@@ -58,6 +64,14 @@ class GameFragment : Fragment() {
 
         return binding.root
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("timer", timer.secondsCount)
+        outState.putInt("score", score)
+        outState.putInt("currentProblem", currentProblem)
+    }
+
 
     private fun generateProblem(binding: FragmentGameBinding) {
         binding.number1TextView.text = (1..10).random().toString()
