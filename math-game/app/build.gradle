@@ -26,6 +26,7 @@ android {
     compileSdkVersion 33
     buildFeatures {
         dataBinding true
+        viewBinding true
     }
     defaultConfig {
         applicationId 'com.example.android.navigation'
@@ -59,6 +60,7 @@ dependencies {
 
     // Material Design
     implementation "com.google.android.material:material:$version_material"
+
 
     // Navigation
     implementation "android.arch.navigation:navigation-fragment-ktx:$version_navigation"
