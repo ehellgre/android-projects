@@ -22,6 +22,9 @@ class EndFragment : Fragment() {
         val score = arguments?.getInt("score", 0)
         binding.endScoreText.text = "$score/4"
 
+        val timer = arguments?.getInt("timer", 0)
+        binding.timerText.text = "Total time: $timer seconds"
+
 
         // Return to first page
         binding.endButton.setOnClickListener {

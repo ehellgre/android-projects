@@ -11,8 +11,13 @@ import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.android.navigation.databinding.FragmentGameBinding
 import com.example.android.navigation.databinding.FragmentTitleBinding
+import timber.log.Timber
 
 class GameFragment : Fragment() {
+
+    private lateinit var timer: Timer
+
+    var timerCount = 0
     var score = 0
     private var currentProblem = 1
 
@@ -24,6 +29,8 @@ class GameFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentGameBinding>(
             inflater, R.layout.fragment_game, container, false
         )
+
+        timer = Timer()
 
         // generate problem for the user to solve
         generateProblem(binding)
@@ -44,6 +51,7 @@ class GameFragment : Fragment() {
             } else {
                 val bundle = Bundle()
                 bundle.putInt("score", score)
+                bundle.putInt("timer", timer.secondsCount)
                 findNavController().navigate(R.id.action_gameFragment_to_endFragment, bundle)
             }
         }
@@ -56,5 +64,25 @@ class GameFragment : Fragment() {
         binding.number2TextView.text = (1..10).random().toString()
         binding.answerText.text.clear()
     }
+
+    override fun onStart() {
+        super.onStart()
+        Timber.i("onStart() called")
+        timer.startTimer()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Timber.i("onStop() called")
+        timer.stopTimer()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Timber.i("onPause() called")
+        timer.stopTimer()
+    }
+
+
 
 }
